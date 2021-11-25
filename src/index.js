@@ -2,6 +2,7 @@ import "./sass/main.scss";
 import Axios from "axios";
 import Notiflix from "notiflix";
 import SimpleLightbox from "simplelightbox";
+import "simplelightbox/dist/simple-lightbox.min.css";
 import {
   fetchGallery,
   incrementPage,
@@ -57,6 +58,7 @@ function getImages(e) {
         );
         return removeBtn();
       }
+      Notiflix.Notify.success(`Hooray! We found ${totalHits} images.`);
       incrementPage();
     })
     .catch((error) => {
